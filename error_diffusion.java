@@ -197,6 +197,7 @@ class ErrorDiffusion
         for (int i = 0; i < H; i++)
             for (int j = 0; j < W; j++)
                 r.setSample(j, i, 0, outImg[i * W + j] == 1 ? 255 : 0);   // 1 -> 255 (white), 0 -> 0 (black)
+        ImageIO.write(res, "png", outFile);
         System.out.println("Saved: " + outFile.getPath());
     }
 }
